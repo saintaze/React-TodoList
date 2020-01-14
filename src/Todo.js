@@ -5,7 +5,7 @@ import './Todo.css';
 class Todo extends Component {
   constructor(props) {
     super(props);
-    this.state = { editing: false, editTitle: this.props.title, completed: false }
+    this.state = { editing: false, editTitle: this.props.title }
   }
 
   handleDeleteTodo = ()=>{
@@ -28,17 +28,16 @@ class Todo extends Component {
   }
 
   handleTitleClick = () => {
-    console.log('cliked')
-    this.setState(st => {
-      return {completed: !st.completed}
-    })
+    this.props.toggleTodoComplete(this.props.id);
   }
 
   renderTodo = ()=>{
-    const todoTitleClass = "Todo-title" + (this.state.completed ? ' done' : '');
+    const todoTitleClass = "Todo-title" + (this.props.completed ? ' done' : '');
     return (
       <React.Fragment>
-        <div className={todoTitleClass} onClick={this.handleTitleClick}>{this.props.title}</div>
+        <div className={todoTitleClass} onClick={this.handleTitleClick}>
+          &nbsp;&nbsp;{this.props.title}&nbsp;&nbsp;
+        </div>
         <div className="Todo-actions">
           <button className="Todo-btns" onClick={this.handleEditTodo}>
             <i className="fas fa-pen"></i>
