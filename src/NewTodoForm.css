@@ -1,0 +1,51 @@
+.NewTodoForm {
+  margin-top: 3rem;
+}
+
+.NewTodoForm h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: normal;
+  margin-bottom: .7rem;
+  font-size: 1.5rem;
+}
+
+.NewTodoForm-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.NewTodoForm-form input{
+  flex-grow: 1;
+  border: none;
+  background-color: #f7f1f1;
+  font-size: initial;
+  padding: 0 1.5em;
+}
+
+.NewTodoForm-form button {
+  padding: 0 1.3rem;
+  border: none;
+  background-color: #ff6666;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, .3);
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.NewTodoForm-form button:hover {
+  background-color: #ff5e5e;
+}
+
+.NewTodoForm-form input,
+.NewTodoForm-form button {
+  font-family: Quicksand;
+  height: 3rem;
+}
+
+.NewTodoForm-form input:focus,
+.NewTodoForm-form button:focus {
+  outline: none;
+} 
